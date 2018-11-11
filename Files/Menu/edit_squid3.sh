@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by : _Dreyannz_
+# Script by : Beeggy
 rm -f /root/opensshport
 rm -f /root/dropbearport
 rm -f /root/stunnel4port
@@ -34,12 +34,12 @@ END
 cd
 clear
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[92m           AutoScriptVPS by Beeggy           "
 echo -e "\e[0m                                                   "
-echo -e "\e[93m                   Squid3  Port                   "
-echo -e "\e[93m               "$squidport
+echo -e "\e[92m                   Squid3  Port                   "
+echo -e "\e[92m               "$squidport
 echo -e "\e[0m                                                   "
 read -p "       Which Port Should Be Changed? :  " Port
 egrep "^$Port" /root/squidport >/dev/null
@@ -47,34 +47,34 @@ if [ $? -eq 0 ]; then
 	read -p "            From Port $Port -> Port " Port_New
 	if grep -Fxq $Port_New /root/opensshport; then
 		echo -e "\e[0m                                                   "
-		echo -e "\e[91m              OpenSSH Port Conflict               "
-		echo -e "\e[91m              Port Is Already In Use              "
+		echo -e "\e[92m              OpenSSH Port Conflict               "
+		echo -e "\e[92m              Port Is Already In Use              "
 		echo -e "\e[0m                                                   "
-		echo -e "\e[94m[][][]======================================[][][]\e[0m"
+		echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 		exit
 	fi
 	if grep -Fxq $Port_New /root/dropbearport; then
 		echo -e "\e[0m                                                   "
-		echo -e "\e[91m              Dropbear Port Conflict              "
-		echo -e "\e[91m              Port Is Already In Use              "
+		echo -e "\e[92m              Dropbear Port Conflict              "
+		echo -e "\e[92m              Port Is Already In Use              "
 		echo -e "\e[0m                                                   "
-		echo -e "\e[94m[][][]======================================[][][]\e[0m"
+		echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 		exit
 	fi
 	if grep -Fxq $Port_New /root/stunnel4port; then
 		echo -e "\e[0m                                                   "
-		echo -e "\e[91m              Stunnel4 Port Conflict              "
-		echo -e "\e[91m              Port Is Already In Use              "
+		echo -e "\e[92m              Stunnel4 Port Conflict              "
+		echo -e "\e[92m              Port Is Already In Use              "
 		echo -e "\e[0m                                                   "
-		echo -e "\e[94m[][][]======================================[][][]\e[0m"
+		echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 		exit
 	fi
 	if grep -Fxq $Port_New /root/openvpnport; then
 		echo -e "\e[0m                                                   "
-		echo -e "\e[91m              OpenVPN Port Conflict               "
-		echo -e "\e[91m              Port Is Already In Use              "
+		echo -e "\e[92m              OpenVPN Port Conflict               "
+		echo -e "\e[92m              Port Is Already In Use              "
 		echo -e "\e[0m                                                   "
-		echo -e "\e[94m[][][]======================================[][][]\e[0m"
+		echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 		exit
 	fi
 	Port_Change="s/$Port/$Port_New/g";
@@ -84,18 +84,18 @@ if [ $? -eq 0 ]; then
 	squidport="$(cat /etc/squid3/squid.conf | grep -i http_port | awk '{print $2}')"
 	clear
 	echo -e "\e[0m                                                   "
-	echo -e "\e[94m[][][]======================================[][][]"
+	echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 	echo -e "\e[0m                                                   "
-	echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+	echo -e "\e[92m           AutoScriptVPS by  Beeggy           "
 	echo -e "\e[0m                                                   "
-	echo -e "\e[93m                   Squid3  Port                   "
-	echo -e "\e[93m               "$squidport
+	echo -e "\e[92m                   Squid3  Port                   "
+	echo -e "\e[92m               "$squidport
 	echo -e "\e[0m                                                   "
-	echo -e "\e[94m[][][]======================================[][][]\e[0m"
+	echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 
 else
 	echo -e "\e[0m                                                   "
 	echo -e "\e[91m                 Port Doesnt Exit                 "
 	echo -e "\e[0m                                                   "
-	echo -e "\e[94m[][][]======================================[][][]\e[0m"
+	echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 fi
