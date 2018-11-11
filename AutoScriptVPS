@@ -1,6 +1,6 @@
 #!/bin/bash
 # Original script by : fornesia, rzengineer and fawzya
-# Modified by : _Dreyannz_
+# Modified by : Beeggy
 # ==================================================
 # Initializing Var
 export DEBIAN_FRONTEND=noninteractive
@@ -34,14 +34,14 @@ apt-get -y install nano iptables dnsutils openvpn screen whois ngrep unzip unrar
 
 echo "clear"                                                              >> .bashrc
 echo 'echo -e "\e[0m                                                   "' >> .bashrc
-echo 'echo -e "\e[94m    :::::::::  :::::::::   ::::::::  :::   :::    "' >> .bashrc
-echo 'echo -e "\e[94m    :+:    :+: :+:    :+: :+:    :+: :+:   :+:    "' >> .bashrc
-echo 'echo -e "\e[94m    +:+    +:+ +:+    +:+        +:+  +:+ +:+     "' >> .bashrc
-echo 'echo -e "\e[94m    +#+    +:+ +#++:++#:      +#++:    +#++:      "' >> .bashrc
-echo 'echo -e "\e[94m    +#+    +#+ +#+    +#+        +#+    +#+       "' >> .bashrc
-echo 'echo -e "\e[94m    #+#    #+# #+#    #+# #+#    #+#    #+#       "' >> .bashrc
-echo 'echo -e "\e[94m    #########  ###    ###  ########     ###       "' >> .bashrc
-echo 'echo -e "\e[94m           AutoScriptVPS by  _Dreyannz_           "' >> .bashrc
+echo 'echo -e "\e[94m   «»«»«»«»«»«»«»«»«»«»     "' >> .bashrc
+echo 'echo -e "\e[94m   ˙°˙°˙°˙°˙°˙°˙°˙°˙°˙°    "' >> .bashrc
+echo 'echo -e "\e[94m   ˙°˙°˙°˙°˙°˙°˙°˙°˙°˙°     "' >> .bashrc
+echo 'echo -e "\e[94m   ←Modified by Beeggy→    "' >> .bashrc
+echo 'echo -e "\e[94m    ●○●○●○●○●○●○●○●○●○●      "' >> .bashrc
+echo 'echo -e "\e[94m     ^<TEAM EPIPHANY>^       "' >> .bashrc
+echo 'echo -e "\e[94m    ★✩★✩★✩★✩★✩★✩★ "' >> .bashrc
+echo 'echo -e "\e[94m           AutoScriptVPS by  Beeggy           "' >> .bashrc
 echo 'echo -e "\e[0m"'                                                    >> .bashrc
 echo 'echo -e "\e[94m             [accounts/options/server]            "' >> .bashrc
 echo 'echo -e "\e[0m                                                   "' >> .bashrc
@@ -53,12 +53,12 @@ apt-get -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/Nginx/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/Nginx/nginx.conf"
 mkdir -p /home/vps/public_html
 echo "<h1><center>AutoScriptVPS by _Dreyannz_</center></h1>" > /home/vps/public_html/index.html
-echo "<h3><center>For More Info Visit My <a href="https://github.com/Dreyannz">Github Repositories</a></center><h3>" >> /home/vps/public_html/index.html
+echo "<h3><center>For More Info Visit My <a href="https://github.com/beeggy">Github Repositories</a></center><h3>" >> /home/vps/public_html/index.html
 echo "<h3><center>You Can Also Contact Me at <a href="https://www.facebook.com/Dreyannz">Facebook</a> and <a href="https://twitter.com/Dreyannz">Twitter</a></center></h3>" >> /home/vps/public_html/index.html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/Nginx/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/Nginx/vps.conf"
 service nginx restart
 
 # Install OpenVPN
@@ -101,13 +101,13 @@ cp /etc/openvpn/easy-rsa/keys/ca.crt /etc/openvpn/ca.crt
 
 # Setting Server
 cd /etc/openvpn/
-wget "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/OpenVPN/server.conf"
+wget "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/OpenVPN/server.conf"
 
 #Create OpenVPN Config
 cd
 mkdir -p /home/vps/public_html
 cd /home/vps/public_html/
-wget "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/OpenVPN/client.ovpn"
+wget "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/OpenVPN/client.ovpn"
 sed -i $MYIP2 /home/vps/public_html/client.ovpn;
 echo '<ca>' >> /home/vps/public_html/client.ovpn
 cat /etc/openvpn/ca.crt >> /home/vps/public_html/client.ovpn
@@ -129,7 +129,7 @@ ufw allow 1194/tcp
 sed -i 's|DEFAULT_INPUT_POLICY="DROP"|DEFAULT_INPUT_POLICY="ACCEPT"|' /etc/default/ufw
 sed -i 's|DEFAULT_FORWARD_POLICY="DROP"|DEFAULT_FORWARD_POLICY="ACCEPT"|' /etc/default/ufw
 cd /etc/ufw/
-wget "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/OpenVPN/before.rules"
+wget "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/OpenVPN/before.rules"
 cd
 ufw enable
 ufw status
@@ -141,9 +141,9 @@ sed -i 's|#net.ipv4.ip_forward=1|net.ipv4.ip_forward=1|' /etc/sysctl.conf
 
 # Install BadVPN
 cd
-wget -O /usr/bin/badvpn-udpgw "https://github.com/Dreyannz/AutoScriptVPS/raw/master/Files/BadVPN/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://github.com/beeggy/AutoScriptVPS/raw/master/Files/BadVPN/badvpn-udpgw"
 if [ "$OS" == "x86_64" ]; then
-  wget -O /usr/bin/badvpn-udpgw "https://github.com/Dreyannz/AutoScriptVPS/raw/master/Files/BadVPN/badvpn-udpgw64"
+  wget -O /usr/bin/badvpn-udpgw "https://github.com/beeggy/AutoScriptVPS/raw/master/Files/BadVPN/badvpn-udpgw64"
 fi
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
@@ -169,7 +169,7 @@ service dropbear restart
 # Install Squid3
 cd
 apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/Squid/squid3.conf"
+wget -O /etc/squid3/squid.conf "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/Squid/squid3.conf"
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
@@ -181,8 +181,8 @@ service webmin restart
 
 # Install Stunnel
 apt-get -y install stunnel4
-wget -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/Stunnel/stunnel.pem"
-wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/Stunnel/stunnel.conf"
+wget -O /etc/stunnel/stunnel.pem "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/Stunnel/stunnel.pem"
+wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/Stunnel/stunnel.conf"
 sed -i $MYIP2 /etc/stunnel/stunnel.conf
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 service stunnel4 restart
@@ -194,7 +194,7 @@ service fail2ban restart
 # Install DDOS Deflate
 cd
 apt-get -y install dnsutils dsniff
-wget "https://github.com/Dreyannz/AutoScriptVPS/raw/master/Files/Others/ddos-deflate-master.zip"
+wget "https://github.com/beeggy/AutoScriptVPS/raw/master/Files/Others/ddos-deflate-master.zip"
 unzip ddos-deflate-master.zip
 cd ddos-deflate-master
 ./install.sh
@@ -203,7 +203,7 @@ rm -rf ddos-deflate-master.zip
 
 # Banner
 rm /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/Others/issue.net"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/Others/issue.net"
 sed -i 's@#Banner@Banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 service ssh restart
@@ -215,12 +215,12 @@ apt-get -y --force-yes -f install libxml-parser-perl
 
 # Install Screenfetch
 apt-get -y install lsb-release scrot
-wget -O screenfetch "https://raw.githubusercontent.com/Dreyannz/AutoScriptVPS/master/Files/Others/screenfetch"
+wget -O screenfetch "https://raw.githubusercontent.com/beeggy/AutoScriptVPS/master/Files/Others/screenfetch"
 chmod +x screenfetch
 
 # Download Commands
 cd /usr/bin
-wget https://github.com/Dreyannz/AutoScriptVPS/raw/master/Files/Menu/AutoScript_Menu.tar.gz
+wget https://github.com/beeggy/AutoScriptVPS/raw/master/Files/Menu/AutoScript_Menu.tar.gz
 tar -xzvf AutoScript_Menu.tar.gz
 rm AutoScript_Menu.tar.gz
 sed -i -e 's/\r$//' accounts
@@ -325,30 +325,30 @@ nginxport="$(netstat -nlpt | grep -i nginx| grep -i 0.0.0.0 | awk '{print $4}' |
 # Info
 clear
 echo -e ""
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 echo -e "\e[0m                                                   "
-echo -e "\e[94m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[92m           AutoScriptVPS by  Beeggy           "
+echo -e "\e[92m                                                  "
+echo -e "\e[91m                    Services                      "
 echo -e "\e[94m                                                  "
-echo -e "\e[94m                    Services                      "
+echo -e "\e[91m    OpenSSH        :   "$opensshport
+echo -e "\e[91m    Dropbear       :   "$dropbearport
+echo -e "\e[91m    SSL            :   "$stunnel4port
+echo -e "\e[91m    OpenVPN        :   "$openvpnport
+echo -e "\e[91m    Port Squid     :   "$squidport
+echo -e "\e[91m    Nginx          :   "$nginxport
 echo -e "\e[94m                                                  "
-echo -e "\e[94m    OpenSSH        :   "$opensshport
-echo -e "\e[94m    Dropbear       :   "$dropbearport
-echo -e "\e[94m    SSL            :   "$stunnel4port
-echo -e "\e[94m    OpenVPN        :   "$openvpnport
-echo -e "\e[94m    Port Squid     :   "$squidport
-echo -e "\e[94m    Nginx          :   "$nginxport
+echo -e "\e[92m              Other Features Included             "
 echo -e "\e[94m                                                  "
-echo -e "\e[94m              Other Features Included             "
-echo -e "\e[94m                                                  "
-echo -e "\e[94m    Timezone       :   Asia/Manila (GMT +7)       "
-echo -e "\e[94m    Webmin         :   http://$MYIP:10000/        "
-echo -e "\e[94m    IPV6           :   [OFF]                      "
-echo -e "\e[94m    Cron Scheduler :   [ON]                       "
-echo -e "\e[94m    Fail2Ban       :   [ON]                       "
-echo -e "\e[94m    DDOS Deflate   :   [ON]                       "
-echo -e "\e[94m    LibXML Parser  :   {ON]                       "
+echo -e "\e[91m    Timezone       :   Asia/Manila (GMT +7)       "
+echo -e "\e[91m    Webmin         :   http://$MYIP:10000/        "
+echo -e "\e[91m    IPV6           :   [OFF]                      "
+echo -e "\e[91m    Cron Scheduler :   [ON]                       "
+echo -e "\e[91m    Fail2Ban       :   [ON]                       "
+echo -e "\e[91m    DDOS Deflate   :   [ON]                       "
+echo -e "\e[91m    LibXML Parser  :   {ON]                       "
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 echo -e "\e[0m                                                   "
 read -n1 -r -p "          Press Any Key To Show Commands          "
 menu
