@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by : _Dreyannz_
+# Script by : Beeggy
 if [ -f /etc/debian_version ]; then
 	UIDN=1000
 elif [ -f /etc/redhat-release ]; then
@@ -9,11 +9,11 @@ else
 fi
 clear
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[92m           AutoScriptVPS by  Beeggy           "
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           Username          Expiration           \e[0m"
+echo -e "\e[92m           Username          Expiration           \e[0m"
 echo " "
 while read Checklist
 do
@@ -27,8 +27,8 @@ do
 done < /etc/passwd
 No_Users="$(awk -F: '$3 >= '$UIDN' && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m              Number of Users: "$No_Users
+echo -e "\e[94m              Number of Users: "$No_Users
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
