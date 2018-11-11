@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by : _Dreyannz_
+# Script by : Beeggy
 #!/bin/bash
 clear
 fi
