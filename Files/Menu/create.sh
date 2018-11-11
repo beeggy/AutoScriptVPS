@@ -1,10 +1,10 @@
 #!/bin/bash
-# Script by : _Dreyannz_
+# Script by : Beeggy
 clear
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m↑↓↑↓※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※↓↑↓↑"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[92m           AutoScriptVPS by  Beeggy           "
 echo -e "\e[0m                                                   "
 read -p "         Username       :  " User
 
@@ -13,19 +13,19 @@ egrep "^$User" /etc/passwd >/dev/null
 if [ $? -eq 0 ]; then
 clear
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m↑↓↑↓※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※↓↑↓↑"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[92m           AutoScriptVPS by  Beeggy          "
 echo -e "\e[0m                                                   "
-echo -e "\e[93m              Username Already Exist              "
+echo -e "\e[92m              Username Already Exist              "
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[95m↑↓↑↓※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※↓↑↓↑\e[0m"
 exit 0
 else
 read -p "         Password       :  " Pass
 read -p "         Active Days    :  " Days
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[95m↑↓↑↓※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※↓↑↓↑\e[0m"
 clear
 sleep 1
 MYIP=$(wget -qO- ipv4.icanhazip.com)
@@ -46,9 +46,9 @@ egrep "^$User" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass\n"|passwd $User &> /dev/null
 clear
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m↑↓↑↓※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※↓↑↓↑"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[92m           AutoScriptVPS by  Beeggy          "
 echo -e "\e[0m                                                   "
 echo -e "         Username        :  $User"
 echo -e "         Password        :  $Pass"
@@ -62,5 +62,5 @@ echo -e "         Port Squid      :  "$squidport
 echo -e "         Port OpenVPN    :  "$openvpnport
 echo -e "              $MYIP/client.ovpn"
 echo -e "                                                  "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 fi
