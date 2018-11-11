@@ -16,7 +16,7 @@ then
 echo -e "\e[0m                                                   "
 echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 echo -e "\e[0m                                                   "
-echo -e "\e[91m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[91m           AutoScriptVPS by  Beeggy           "
 echo -e "\e[0m                                                   "
 echo -e "\e[92m              User Has Been Unlocked              "
 echo -e "\e[92m      User Has Been Removed from Locked_List      "
