@@ -1,23 +1,23 @@
 #!/bin/bash
-# Script by : _Dreyannz_
+# Script by : beeggy
 clear
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[92m           AutoScriptVPS by  beeggy           "
 echo -e "\e[0m                                                   "
 read -p "         No. of Users   :  " No_User
 read -p "         Active Days    :  " Days
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 sleep 2
 clear
 Today="$(date +"%Y-%m-%d")"
 Expire_On=$(date -d "$Days days" +"%Y-%m-%d")
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[91m           AutoScriptVPS by beeggy           "
 echo -e "\e[0m                                                   "
 for (( i=1; i <= $No_User; i++ ))
 do
@@ -28,4 +28,4 @@ do
 	echo -e "         Username/Pass   :  "$USER
 done
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[93m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
