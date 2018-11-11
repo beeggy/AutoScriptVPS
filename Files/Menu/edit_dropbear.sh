@@ -36,69 +36,66 @@ clear
 echo -e "\e[0m                                                   "
 echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 echo -e "\e[0m                                                   "
-echo -e "\e[92m           AutoScriptVPS by  Beeggy          "
+echo -e "\e[92m           AutoScriptVPS by  Beeggy           "
 echo -e "\e[0m                                                   "
-echo -e "\e[92m                  Dropbear  Ports                 "
-echo -e "\e[32m                   "$dropbearport
+echo -e "\e[92m                  OpenSSH  Ports                  "
+echo -e "\e[92m                   "$opensshport
 echo -e "\e[0m                                                   "
 read -p "       Which Port Should Be Changed? :  " Port
-egrep "^$Port" /root/dropbearport >/dev/null
+egrep "^$Port" /root/opensshport >/dev/null
 if [ $? -eq 0 ]; then
 	read -p "            From Port $Port -> Port " Port_New
-	if grep -Fxq $Port_New /root/opensshport; then
+	if grep -Fxq $Port_New /root/dropbearport; then
 		echo -e "\e[0m                                                   "
-		echo -e "\e[91m              OpenSSH Port Conflict              "
-		echo -e "\e[91m              Port Is Already In Use              "
+		echo -e "\e[92m              Dropbear Port Conflict              "
+		echo -e "\e[92m              Port Is Already In Use              "
 		echo -e "\e[0m                                                   "
 		echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 		exit
 	fi
 	if grep -Fxq $Port_New /root/stunnel4port; then
 		echo -e "\e[0m                                                   "
-		echo -e "\e[92m              Stunnel4 Port Conflict              "
-		echo -e "\e[92m              Port Is Already In Use              "
+		echo -e "\e[91m              Stunnel4 Port Conflict              "
+		echo -e "\e[91m              Port Is Already In Use              "
 		echo -e "\e[0m                                                   "
 		echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 		exit
 	fi
 	if grep -Fxq $Port_New /root/openvpnport; then
 		echo -e "\e[0m                                                   "
-		echo -e "\e[92m              Openvpn Port Conflict               "
-		echo -e "\e[92m              Port Is Already In Use              "
+		echo -e "\e[91m              Openvpn Port Conflict               "
+		echo -e "\e[91m              Port Is Already In Use              "
 		echo -e "\e[0m                                                   "
-		echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
+		echo -e "\e[94m[][][]======================================[][][]\e[0m"
 		exit
 	fi
 	if grep -Fxq $Port_New /root/squidport; then
 		echo -e "\e[0m                                                   "
-		echo -e "\e[92m               Squid3 Port Conflict               "
-		echo -e "\e[92m              Port Is Already In Use              "
+		echo -e "\e[91m               Squid3 Port Conflict               "
+		echo -e "\e[91m              Port Is Already In Use              "
 		echo -e "\e[0m                                                   "
-		echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
+		echo -e "\e[94m[][][]======================================[][][]\e[0m"
 		exit
 	fi
 	Port_Change="s/$Port/$Port_New/g";
-	sed -i $Port_Change /etc/default/dropbear
-
-	service dropbear restart > /dev/null
-	rm -f /root/dropbear
-	dropbearport="$(netstat -nlpt | grep -i dropbear | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
+	sed -i $Port_Change /etc/ssh/sshd_conf
+	service ssh restart > /dev/null
+	rm -f /root/opensshport
+	opensshport="$(netstat -nlpt | grep -i sshd | grep -i 0.0.0.0 | awk '{print $4}' | cut -d: -f2)"
 	clear
 	echo -e "\e[0m                                                   "
-	echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
+	echo -e "\e[94m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 	echo -e "\e[0m                                                   "
-	echo -e "\e[92m           AutoScriptVPS by  Beeggy          "
+	echo -e "\e[92m           AutoScriptVPS by  Beeggy           "
 	echo -e "\e[0m                                                   "
-	echo -e "\e[92m                  Dropbear  Ports                 "
-	echo -e "\e[92m                   "$dropbearport
+	echo -e "\e[92m                  OpenSSH  Ports                  "
+	echo -e "\e[92m                   "$opensshport
 	echo -e "\e[0m                                                   "
 	echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 
 else
-	clear
 	echo -e "\e[0m                                                   "
-	echo -e "\e[91m                 Port Doesnt Exit                 "
+	echo -e "\e[92m                 Port Doesnt Exit                 "
 	echo -e "\e[0m                                                   "
 	echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 fi
-
