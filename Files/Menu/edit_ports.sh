@@ -1,22 +1,22 @@
 #!/bin/bash
-# Script by : _Dreyannz_
+# Script by : Beeggy
 clear
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※"
 echo -e "\e[0m                                                   "
-echo -e "\e[93m           AutoScriptVPS by  _Dreyannz_           "
+echo -e "\e[93m           AutoScriptVPS by  Beeggy           "
 echo -e "\e[0m                                                   "
-echo -e "\e[93m            [1] Show All Service Ports"
-echo -e "\e[93m            [2] Edit Port OpenSSH"
-echo -e "\e[93m            [3] Edit Port Dropbear"
-echo -e "\e[93m            [4] Edit Port Stunnel"
-echo -e "\e[93m            [5] Edit Port OpenVPN"
-echo -e "\e[93m            [6] Edit Port Squid"
-echo -e "\e[93m            [x] Exit"
+echo -e "\e[32m            [1] Show All Service Ports"
+echo -e "\e[32m            [2] Edit Port OpenSSH"
+echo -e "\e[32m            [3] Edit Port Dropbear"
+echo -e "\e[32m            [4] Edit Port Stunnel"
+echo -e "\e[32m            [5] Edit Port OpenVPN"
+echo -e "\e[32m            [6] Edit Port Squid"
+echo -e "\e[32m            [x] Exit"
 echo -e "\e[0m                                                   "
 read -p "       Select From Options [1-6 or x] :  " Port
 echo -e "\e[0m                                                   "
-echo -e "\e[94m[][][]======================================[][][]\e[0m"
+echo -e "\e[95m※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※※\e[0m"
 sleep 3
 clear
 case $Port in
